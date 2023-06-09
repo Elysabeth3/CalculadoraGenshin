@@ -5,14 +5,16 @@ import java.util.ArrayList;
 public abstract class Atributo {
     private final ArrayList<Double> valoresPosibles;
     private double valor;
+    private double valorAnt;
     private int prioridad;
-
+    
     public Atributo() {
         this.valoresPosibles = null;
     }
 
     public Atributo(double valor, int prioridad, ArrayList<Double> valoresPosibles) {
         this.valor = valor;
+        this.valorAnt = 0;
         this.prioridad = prioridad;
         this.valoresPosibles = valoresPosibles;
     }
@@ -24,6 +26,19 @@ public abstract class Atributo {
     public double getValor() {
         return valor;
     }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public void setValorAnt(double valorAnt) {
+        this.valorAnt = valorAnt;
+    }
+
+    public double getValorAnt() {
+        return valorAnt;
+    }
+    
     
     public boolean contieneValor(double valor) {
         return valoresPosibles.contains(valor);

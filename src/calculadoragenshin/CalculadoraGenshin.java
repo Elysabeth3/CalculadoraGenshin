@@ -86,7 +86,7 @@ public class CalculadoraGenshin {
         String tipo;
         double valor;
         Atributo devolver;
-        System.out.println("Los tipos del atrivuto son: DEF, DEF%, HP, HP%, ATQ, ATQ%, RECARGA, ME, PROB, DMG");
+        System.out.println("Los tipos del atributo son: DEF, DEF%, HP, HP%, ATQ, ATQ%, RECARGA, ME, PROB, DMG");
         do{
             tipo = EntradaDatos.pedirCadena("Introduzca el tipo del atributo:");
         } while (comprobarTipo(tipo));
@@ -124,6 +124,13 @@ public class CalculadoraGenshin {
                 }
             }
             case 2 -> {
+                int nivelArtefacto = a1.getNivel();
+                if (nivelArtefacto != 0) {
+                    System.out.println("¿Qué atributo evuluciono previamente?");
+                    int posicion = EntradaDatos.pedirEntero("1,2,3,4");
+                    double valor = EntradaDatos.pedirDoble("Introduce el nuevo valor del atributo");
+                    a1.modificarAtributo(posicion-1, valor);
+                }
                 System.out.println(a1.SubirNivel());
             }
             case 3 -> {
