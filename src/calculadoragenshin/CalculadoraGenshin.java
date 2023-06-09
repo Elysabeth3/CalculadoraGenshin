@@ -5,7 +5,7 @@ import artefactos.*;
 public class CalculadoraGenshin {
 
     private static Artefacto a1;
-    
+    private static boolean atri3;
     public static boolean comprobarTipo(String tipo){
         return (!"DEF".equalsIgnoreCase(tipo) && !"DEF%".equalsIgnoreCase(tipo)
                 && !"HP".equalsIgnoreCase(tipo) && !"HP%".equalsIgnoreCase(tipo)
@@ -121,11 +121,17 @@ public class CalculadoraGenshin {
                 String pregunta = EntradaDatos.pedirCadena("(Si/No)");
                 if ("Si".equals(pregunta)) {
                     a1.setAtributo(crearAtributo());
-                }
+                }else
+                    atri3 = true;
             }
             case 2 -> {
                 int nivelArtefacto = a1.getNivel();
                 if (nivelArtefacto != 0) {
+                    if (atri3) {
+                        System.out.println("Añade el 4 atributo");
+                        a1.setAtributo(crearAtributo());
+                        atri3 = false;
+                    }
                     System.out.println("¿Qué atributo evuluciono previamente?");
                     int posicion = EntradaDatos.pedirEntero("1,2,3,4");
                     double valor = EntradaDatos.pedirDoble("Introduce el nuevo valor del atributo");
