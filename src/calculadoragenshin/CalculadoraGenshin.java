@@ -133,7 +133,7 @@ public class CalculadoraGenshin {
                 }
                 System.out.println(a1.SubirNivel());
             }
-            case 4 -> {
+            case 3 -> {
                 return false;
             }
         }
@@ -146,7 +146,7 @@ public class CalculadoraGenshin {
             System.out.println("--MENU--");
             System.out.println("1.Crear artefacto");
             System.out.println("2.Subir de nivel el artefacto");
-            System.out.println("4.Fin");
+            System.out.println("3.Fin");
             decision = EntradaDatos.pedirEntero("Introduce la opcion deseada:");
         } while(menu(decision));
     }
